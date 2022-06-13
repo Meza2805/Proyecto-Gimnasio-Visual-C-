@@ -12,7 +12,7 @@ namespace Capa_Negocio
     public class Login
     {
         Acceso conexion = new Acceso();
-        SqlDataAdapter adaptador;
+
         SqlCommand comando = new SqlCommand();
 
         public struct login
@@ -43,8 +43,7 @@ namespace Capa_Negocio
             l.nombre = Convert.ToString(comando.Parameters["@nombre"].Value);
             l.apellido = Convert.ToString(comando.Parameters["@apellido"].Value);
             conexion.conexion_datos.Close();
-            return l;
-                
+            return l;  
          }
 
     }

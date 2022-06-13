@@ -42,11 +42,11 @@ namespace Ginmasio
             cbSexo.Items.Add("MASCULINO");
         }
 
-        public void sonido_boton ()
-        {
-            SoundPlayer boton = new SoundPlayer(@"C:\BD\Repositorio para Base de Datos Sql Server\Gimnasio\Base-de-Datos-Gimnasio\Proyecto de Visual Studio C#\Ginmasio\Resources\Sonido_boton.wav");
-            boton.Play();
-        }
+        //public void sonido_boton ()
+        //{
+        //    SoundPlayer boton = new SoundPlayer(@"C:\BD\Repositorio para Base de Datos Sql Server\Gimnasio\Base-de-Datos-Gimnasio\Proyecto de Visual Studio C#\Ginmasio\Resources\Sonido_boton.wav");
+        //    boton.Play();
+        //}
         public void mostrar_clientes()
         {
 
@@ -176,13 +176,13 @@ namespace Ginmasio
 
         private void btnSalirCliente_Click(object sender, EventArgs e)
         {
-            sonido_boton();
+            //sonido_boton();
             this.Close();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            sonido_boton();
+            //sonido_boton();
             Borrar_ErrorProvider();
             if ((validar_Espacios_vacios() == true))
             {
@@ -261,7 +261,7 @@ namespace Ginmasio
         }
         private void btnInsertar_Click(object sender, EventArgs e) //Evento de Boton Insertar
         {
-            sonido_boton();
+            //sonido_boton();
             Borrar_ErrorProvider();
            if ((validar_Espacios_vacios() ==  true) )
             {
@@ -303,7 +303,7 @@ namespace Ginmasio
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            sonido_boton();
+            //sonido_boton();
             Borrar_ErrorProvider();
             int Fila;
             bool band=false;
@@ -335,7 +335,7 @@ namespace Ginmasio
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            sonido_boton();
+            //sonido_boton();
             Borrar_ErrorProvider();
             if ((validar_Cedula() == true))
             {
@@ -361,10 +361,9 @@ namespace Ginmasio
             }
         }
 
-
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            sonido_boton();
+            //sonido_boton();
             Borrar_ErrorProvider();
             limpiar_texbox();
         }

@@ -18,7 +18,9 @@ namespace Ginmasio
             InitializeComponent();
             
         }
+        public static string cedula,nombre, apellido;
         Login acceso = new Login();
+        Frm_Inicio inicio;
         public static string usser,contra;
         public static int intentos=0;
         private void txtUsuario_Enter(object sender, EventArgs e)
@@ -57,6 +59,11 @@ namespace Ginmasio
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -106,7 +113,13 @@ namespace Ginmasio
                     break;
                 case 3:
                     mensaje = new Bienvenida_Login(acceso.verficar_login(usser, contra).nombre, acceso.verficar_login(usser, contra).validacion);
+                    cedula = acceso.verficar_login(usser, contra).cedula;
+                    nombre = acceso.verficar_login(usser, contra).nombre;
+                    apellido = acceso.verficar_login(usser, contra).apellido;
                     mensaje.ShowDialog();
+                    inicio = new Frm_Inicio(cedula,nombre, apellido);
+                    inicio.Show();
+                    this.Hide();
                 break;
 
             }

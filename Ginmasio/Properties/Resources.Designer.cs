@@ -133,6 +133,16 @@ namespace Ginmasio.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cambiar {
+            get {
+                object obj = ResourceManager.GetObject("cambiar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cancel_button_close_delete_icon_124197 {
             get {
                 object obj = ResourceManager.GetObject("cancel_button_close_delete_icon_124197", resourceCulture);
@@ -236,6 +246,16 @@ namespace Ginmasio.Properties {
         internal static System.Drawing.Bitmap costo_de_envio {
             get {
                 object obj = ResourceManager.GetObject("costo-de-envio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap documento {
+            get {
+                object obj = ResourceManager.GetObject("documento", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -396,6 +416,26 @@ namespace Ginmasio.Properties {
         internal static System.Drawing.Bitmap paquetes__1_ {
             get {
                 object obj = ResourceManager.GetObject("paquetes (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap perfil {
+            get {
+                object obj = ResourceManager.GetObject("perfil", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap perfil__1_ {
+            get {
+                object obj = ResourceManager.GetObject("perfil (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

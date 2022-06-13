@@ -14,6 +14,7 @@ namespace Ginmasio
     public partial class Bienvenida_Login : Form
     {
         Login acceso = new Login();
+        
         public static string muestra;
         public static int va;
         public Bienvenida_Login(string nombre,int validacion)
@@ -42,9 +43,9 @@ namespace Ginmasio
                     break;
                     case 3:
                     lbBienvenida.Text = "BIENVENIDO " + muestra;
-                    pictureBox1.Image = Image.FromFile("C:\\BD\\Repositorio para Base de Datos Sql Server\\Gimnasio\\Base-de-Datos-Gimnasio\\Proyecto de Visual Studio C#\\Ginmasio\\Resources\\candado.png");
+                    pictureBox1.Image = Image.FromFile("C:\\BD\\Repositorio para Visual C# Gimnasio\\Proyecto-Gimnasio-Visual-C-\\Ginmasio\\Resources\\candado.png");
                     break;
-            }
+                }
             }
         public void centrar()
         {
@@ -57,11 +58,37 @@ namespace Ginmasio
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
-            if (va == 1)
+            switch (va)
             {
-                Environment.Exit(0);//cierra toda la aplicacion
+                case 0:
+                    //lbBienvenida.Text = "EL USUARIO NO EXISTE";
+                    this.Close();
+                    break;
+                case 1:
+                    //lbBienvenida.Text = "HA SUPERADO EL LIMITE DE INTENTOS";
+                    this.Close();
+                    Environment.Exit(0);//cierra toda la aplicacion
+                    break;
+                case 2:
+                    // lbBienvenida.Text = "CONTRASEÑA INCORRECTA";
+                    this.Close();
+                    break;
+                case 3:
+                    this.Close();
+                    break;
             }
+
+            //if (va == 1)
+            //{
+            //    this.Close();
+            //    Environment.Exit(0);//cierra toda la aplicacion
+            //}
+            //else
+            //{
+            //    this.Close();
+            //    inicio.Show();
+
+            //}
         }
     }
 }

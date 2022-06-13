@@ -10,29 +10,40 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Media;
 
+
 namespace Ginmasio
 {
     public partial class Frm_Inicio : Form
     {
-        public Frm_Inicio()
+        public static string n, a,c;
+        Frm_Login ventana_login = new Frm_Login();
+        public Frm_Inicio(string cedula,string nombre, string apellido)
         {
             InitializeComponent();
+            c = cedula;
+            n = nombre;
+            a = apellido;
             //Estas lineas eliminan los parpadeos del formulario o controles en la interfaz grafica (Pero no en un 100%)
             this.SetStyle(ControlStyles.ResizeRedraw, true);
             this.DoubleBuffered = true;
-       
+            mostrar_usuario_activo();
         }
 
-        public void sonido_boton()
-        {
-            SoundPlayer boton = new SoundPlayer(@"C:\BD\Repositorio para Base de Datos Sql Server\Gimnasio\Base-de-Datos-Gimnasio\Proyecto de Visual Studio C#\Ginmasio\Resources\Sonido_boton.wav");
-            boton.Play();
-        }
-        public void sonido_menu()
-        {
-            SoundPlayer boton = new SoundPlayer(@"C:\BD\Repositorio para Base de Datos Sql Server\Gimnasio\Base-de-Datos-Gimnasio\Proyecto de Visual Studio C#\Ginmasio\Resources\Sonido_menu.wav");
-            boton.Play();
-        }
+        public void mostrar_usuario_activo()
+            {
+            LbUsuario.Text = n + " " + a;
+            }
+
+        //public void sonido_boton()
+        //{
+        //   // SoundPlayer boton = new SoundPlayer(@"C:\BD\Repositorio para Base de Datos Sql Server\Gimnasio\Base-de-Datos-Gimnasio\Proyecto de Visual Studio C#\Ginmasio\Resources\Sonido_boton.wav");
+        //    boton.Play();
+        //}
+        //public void sonido_menu()
+        //{
+        //    //SoundPlayer boton = new SoundPlayer(@"C:\BD\Repositorio para Base de Datos Sql Server\Gimnasio\Base-de-Datos-Gimnasio\Proyecto de Visual Studio C#\Ginmasio\Resources\Sonido_menu.wav");
+        //    boton.Play();
+        //}
 
 
         //METODO PARA REDIMENCIONAR/CAMBIAR TAMAÑO A FORMULARIO  TIEMPO DE EJECUCION ----------------------------------------------------------
@@ -97,7 +108,7 @@ namespace Ginmasio
         }
           private void btnMinimizar_Click(object sender, EventArgs e)
         {
-            sonido_boton();
+            //sonido_boton();
             this.WindowState = FormWindowState.Minimized;
         }
 
@@ -151,7 +162,7 @@ namespace Ginmasio
 
         private void button1_Click(object sender, EventArgs e)
         {
-            sonido_boton();
+           // sonido_boton();
             contraer_menu_productos();
             abrirFormHijo(new Frm_Cliente());
         }
@@ -253,7 +264,7 @@ namespace Ginmasio
         private void bntSuscripcion_Click(object sender, EventArgs e)
         {
             contraer_menu_productos();
-            abrirFormHijo(new Frm_Suscripcion());
+            abrirFormHijo(new Frm_Suscripcion(c)); //pasamo la cedula del empleado
         }
 
         private void bntAsistencia_Click(object sender, EventArgs e)
@@ -333,7 +344,7 @@ namespace Ginmasio
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            sonido_boton();
+          //  sonido_boton();
             this.WindowState = FormWindowState.Normal;
             btn_maximizar_todo.Visible = true;
            // btnMaximizar.Visible = true;
@@ -343,16 +354,16 @@ namespace Ginmasio
 
         private void bnt_Cerrar_todo_Click(object sender, EventArgs e)
         {
-            sonido_boton();
+            //sonido_boton();
             if (MessageBox.Show("¿ESTA SEGURO QUE DESEA SALIR", "ATENCION", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == (System.Windows.Forms.DialogResult.Yes))
             {
-                this.Close();
+                Environment.Exit(0);
             }
         }
 
         private void btn_maximizar_todo_Click(object sender, EventArgs e)
         {
-            sonido_boton();
+            //sonido_boton();
             this.WindowState = FormWindowState.Maximized;
            // btnMaximizar.Visible = false;
             btn_maximizar_todo.Visible = false;
@@ -362,7 +373,7 @@ namespace Ginmasio
 
         private void btn_Minimizar_Todo_Click(object sender, EventArgs e)
         {
-            sonido_boton();
+           // sonido_boton();
             this.WindowState = FormWindowState.Minimized;
         }
 
@@ -373,12 +384,18 @@ namespace Ginmasio
 
         private void bntFacturacion_MouseEnter(object sender, EventArgs e)
         {
-            sonido_menu();
+           // sonido_menu();
         }
 
         private void bntSuscripcion_MouseEnter(object sender, EventArgs e)
         {
-            sonido_menu();
+            //sonido_menu();
+        }
+
+        private void panel5_Click(object sender, EventArgs e)
+        {
+            ventana_login.Show();
+            this.Close();
         }
 
         private void Panel_Ser_Admin_Paint(object sender, PaintEventArgs e)
