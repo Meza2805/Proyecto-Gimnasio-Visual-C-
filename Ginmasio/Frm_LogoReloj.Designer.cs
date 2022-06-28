@@ -29,45 +29,45 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.Hora = new System.Windows.Forms.Label();
-            this.Fecha = new System.Windows.Forms.Label();
+            this.lbHora = new System.Windows.Forms.Label();
+            this.lbFecha = new System.Windows.Forms.Label();
             this.hora_fecha = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pc_Logo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pc_Logo)).BeginInit();
             this.SuspendLayout();
             // 
-            // Hora
+            // lbHora
             // 
-            this.Hora.AutoSize = true;
-            this.Hora.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Hora.Location = new System.Drawing.Point(413, 446);
-            this.Hora.Name = "Hora";
-            this.Hora.Size = new System.Drawing.Size(0, 58);
-            this.Hora.TabIndex = 1;
+            this.lbHora.AutoSize = true;
+            this.lbHora.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHora.Location = new System.Drawing.Point(413, 446);
+            this.lbHora.Name = "lbHora";
+            this.lbHora.Size = new System.Drawing.Size(0, 58);
+            this.lbHora.TabIndex = 1;
             // 
-            // Fecha
+            // lbFecha
             // 
-            this.Fecha.AutoSize = true;
-            this.Fecha.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Fecha.Location = new System.Drawing.Point(202, 507);
-            this.Fecha.Name = "Fecha";
-            this.Fecha.Size = new System.Drawing.Size(0, 58);
-            this.Fecha.TabIndex = 2;
+            this.lbFecha.AutoSize = true;
+            this.lbFecha.Font = new System.Drawing.Font("Tahoma", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFecha.Location = new System.Drawing.Point(202, 507);
+            this.lbFecha.Name = "lbFecha";
+            this.lbFecha.Size = new System.Drawing.Size(0, 58);
+            this.lbFecha.TabIndex = 2;
             // 
             // hora_fecha
             // 
             this.hora_fecha.Enabled = true;
             this.hora_fecha.Tick += new System.EventHandler(this.hora_fecha_Tick);
             // 
-            // pictureBox1
+            // pc_Logo
             // 
-            this.pictureBox1.Image = global::Ginmasio.Properties.Resources.Zona_Fitr_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(291, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(405, 390);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pc_Logo.Image = global::Ginmasio.Properties.Resources.Zona_Fitr_removebg_preview;
+            this.pc_Logo.Location = new System.Drawing.Point(544, 1);
+            this.pc_Logo.Name = "pc_Logo";
+            this.pc_Logo.Size = new System.Drawing.Size(405, 390);
+            this.pc_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pc_Logo.TabIndex = 0;
+            this.pc_Logo.TabStop = false;
             // 
             // Frm_LogoReloj
             // 
@@ -76,14 +76,14 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
             this.ClientSize = new System.Drawing.Size(1027, 626);
             this.ControlBox = false;
-            this.Controls.Add(this.Fecha);
-            this.Controls.Add(this.Hora);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lbFecha);
+            this.Controls.Add(this.lbHora);
+            this.Controls.Add(this.pc_Logo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Frm_LogoReloj";
             this.Text = "FrmHome";
             this.Load += new System.EventHandler(this.FrmHome_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pc_Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -91,9 +91,9 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label Hora;
-        private System.Windows.Forms.Label Fecha;
+        private System.Windows.Forms.PictureBox pc_Logo;
+        private System.Windows.Forms.Label lbHora;
+        private System.Windows.Forms.Label lbFecha;
         private System.Windows.Forms.Timer hora_fecha;
     }
 }

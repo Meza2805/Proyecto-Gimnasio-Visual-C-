@@ -17,6 +17,9 @@ namespace Ginmasio
         {
             InitializeComponent();
             cargar_membresia();
+            Cargar_membresia_precio();
+            Cargar_registro_sus();
+
             Cedula_empleado = Cedula;
           
         }
@@ -26,10 +29,10 @@ namespace Ginmasio
         public static String Cedula_empleado;
         public static String Cedula_cliente;
         public static char codigo_membresia;
-        public static DateTime fecha;
+        public static string fecha;
         public List<string> Membresia_codigo = new List<string>();
         
-        public void cargar_membresia()
+        public void cargar_membresia() //Metodo para cargar las membresias al ComboBox
         {
             Membresia_codigo = Memb.Lista_Membresia();
             foreach(var item in Membresia_codigo)
@@ -39,43 +42,82 @@ namespace Ginmasio
 
         }
 
+
+        public void Cargar_membresia_precio() //Metodo para cargar los precios de las membresia en el DataGridView
+        {
+            dgvPrecio_Membresia.DataSource = Memb.Mostrar_Precio_Membresia();
+        }
+
+
+        public void Cargar_registro_sus() //Metodo para mostrar el registro de membresias activas
+        {
+            dgv_Registro_Membresia.DataSource = Memb.Mostrar_susc();
+        }
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
             Nombre_empleado = txtNombre_Busqueda.Text;
             dgvClientes.DataSource= Memb.Cargar_Clientes(Nombre_empleado);
         }
 
+        public bool validar_membresia()
+        {
+            bool band= true;
+            if(txtCedula.Text.Length == 0 )
+            {
+               
+                band= false;
+            }
+            return band;
+        }
+
+
         private void dgvClientes_Click(object sender, EventArgs e)
         {
-            txtCedula.Text = dgvClientes.CurrentRow.Cells[0].Value.ToString();
-            txtPrimerNombre.Text = dgvClientes.CurrentRow.Cells[1].Value.ToString();
-            txtSegundoNombre.Text =  dgvClientes.CurrentRow.Cells[2].Value.ToString();
-            txtPrimerApellido.Text = dgvClientes.CurrentRow.Cells[3].Value.ToString();
-            txtSegundoApellido.Text = dgvClientes.CurrentRow.Cells[4].Value.ToString();
-            Cedula_cliente = dgvClientes.CurrentRow.Cells[0].Value.ToString();
+            try
+            {
+                txtCedula.Text = dgvClientes.CurrentRow.Cells[0].Value.ToString();
+                txtPrimerNombre.Text = dgvClientes.CurrentRow.Cells[1].Value.ToString();
+                txtSegundoNombre.Text = dgvClientes.CurrentRow.Cells[2].Value.ToString();
+                txtPrimerApellido.Text = dgvClientes.CurrentRow.Cells[3].Value.ToString();
+                txtSegundoApellido.Text = dgvClientes.CurrentRow.Cells[4].Value.ToString();
+                Cedula_cliente = dgvClientes.CurrentRow.Cells[0].Value.ToString();
+            }
+            catch(NullReferenceException)
+            {
+
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //fecha = Convert.ToString(Memb.Registrar_Suscripcion(Cedula_cliente, Cedula_empleado, codigo_membresia).fecha);
-            //MessageBox.Show(" la fecha es "+fecha);
-            //caja = new Mensaje_Suscripcion(cbMembresia.Text,fecha);
-            codigo_membresia = Memb.busqueda_membresia(cbMembresia.Text);
-            if (Memb.Registrar_Suscripcion(Cedula_cliente, Cedula_empleado, codigo_membresia).valor == 0)
+            codigo_membresia= Memb.busqueda_membresia(cbMembresia.Text);
+  
+            Memb.Registrar_Suscripcion(Cedula_cliente, Cedula_empleado, codigo_membresia); //Instancia del objeto para registrar la suscripcion
+            caja = new Mensaje_Suscripcion();//Instanciamos el formulario con el parametro
+            AddOwnedForm(caja); //asignamos este formulario como propietario
+            caja.ShowDialog(); //mostramos la vent
+         
+           
+
+            /*
+           
+            if (validar_membresia() == false)
             {
-                //MessageBox.Show("SUSCRIPCION REALIZADA CORRECTAMENTE");
-                fecha = Memb.Registrar_Suscripcion(Cedula_cliente, Cedula_empleado, codigo_membresia).fecha;
-                caja = new Mensaje_Suscripcion(cbMembresia.Text, fecha);
-               // MessageBox.Show(" la fecha es " + fecha);
-                caja.ShowDialog();
+                MessageBox.Show("DEBE BUSCAR UN CLIENTE ANTES DE SUSCRIPCION", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+              
+                errorProvider1.SetError(txtNombre_Busqueda,"ERROR");
             }
             else
             {
-                MessageBox.Show("ERROR");
-            }
+                
+            }*/
 
 
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -101,7 +101,7 @@ namespace Ginmasio
             }
             catch (NullReferenceException)
             {
-                MessageBox.Show("INDICE INVALIDO", "ERROR");
+               
                 mostrar_clientes();
             }
         }
@@ -248,6 +248,11 @@ namespace Ginmasio
         private void txtCedula_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCerrar_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         ///Metodos de eventos de Botones*************************************************************************************

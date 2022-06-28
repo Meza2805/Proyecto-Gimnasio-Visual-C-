@@ -68,6 +68,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtMembresiaActiva = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCliente)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Error_Provider)).BeginInit();
@@ -125,7 +126,7 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SteelBlue;
             this.DgvCliente.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DgvCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvCliente.Size = new System.Drawing.Size(973, 400);
+            this.DgvCliente.Size = new System.Drawing.Size(999, 400);
             this.DgvCliente.TabIndex = 0;
             this.DgvCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvCliente_CellContentClick);
             this.DgvCliente.SelectionChanged += new System.EventHandler(this.DgvCliente_SelectionChanged);
@@ -526,13 +527,27 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "MEMBRESIA ACTIVA";
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Image = global::Ginmasio.Properties.Resources.salida__2_;
+            this.btnCerrar.Location = new System.Drawing.Point(934, 546);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(83, 83);
+            this.btnCerrar.TabIndex = 25;
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
+            // 
             // Frm_Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.ClientSize = new System.Drawing.Size(1210, 788);
+            this.ClientSize = new System.Drawing.Size(1031, 641);
             this.ControlBox = false;
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.gbCliente);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.groupBox1);
@@ -591,5 +606,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtMembresiaActiva;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }

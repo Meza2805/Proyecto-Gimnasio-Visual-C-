@@ -43,6 +43,7 @@ C:\BD\Repositorio para Visual C# Gimnasio\Proyecto-Gimnasio-Visual-C-\Ginmasio\o
 C:\BD\Repositorio para Visual C# Gimnasio\Proyecto-Gimnasio-Visual-C-\Ginmasio\obj\Debug\Ginmasio.Frm_P_Marca.resources
 C:\BD\Repositorio para Visual C# Gimnasio\Proyecto-Gimnasio-Visual-C-\Ginmasio\obj\Debug\Ginmasio.Frm_P_Registro.resources
 C:\BD\Repositorio para Visual C# Gimnasio\Proyecto-Gimnasio-Visual-C-\Ginmasio\obj\Debug\Ginmasio.Frm_Suscripcion.resources
+C:\BD\Repositorio para Visual C# Gimnasio\Proyecto-Gimnasio-Visual-C-\Ginmasio\obj\Debug\Ginmasio.Mensaje_Suscripcion.resources
 C:\BD\Repositorio para Visual C# Gimnasio\Proyecto-Gimnasio-Visual-C-\Ginmasio\obj\Debug\Ginmasio.Properties.Resources.resources
 C:\BD\Repositorio para Visual C# Gimnasio\Proyecto-Gimnasio-Visual-C-\Ginmasio\obj\Debug\Ginmasio.Frm_Inicio.resources
 C:\BD\Repositorio para Visual C# Gimnasio\Proyecto-Gimnasio-Visual-C-\Ginmasio\obj\Debug\Capa Presentacion.csproj.GenerateResource.cache
@@ -50,4 +51,3 @@ C:\BD\Repositorio para Visual C# Gimnasio\Proyecto-Gimnasio-Visual-C-\Ginmasio\o
 C:\BD\Repositorio para Visual C# Gimnasio\Proyecto-Gimnasio-Visual-C-\Ginmasio\obj\Debug\Capa Presentacion.csproj.CopyComplete
 C:\BD\Repositorio para Visual C# Gimnasio\Proyecto-Gimnasio-Visual-C-\Ginmasio\obj\Debug\Ginmasio.exe
 C:\BD\Repositorio para Visual C# Gimnasio\Proyecto-Gimnasio-Visual-C-\Ginmasio\obj\Debug\Ginmasio.pdb
-C:\BD\Repositorio para Visual C# Gimnasio\Proyecto-Gimnasio-Visual-C-\Ginmasio\obj\Debug\Ginmasio.Mensaje_Suscripcion.resources

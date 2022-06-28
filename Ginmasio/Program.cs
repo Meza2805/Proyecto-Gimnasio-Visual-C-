@@ -16,8 +16,10 @@ namespace Ginmasio
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Frm_Inicio());
+            //Application.Run(new Frm_Inicio("448-1504933-0001V","Carlos","Perez"));
             Application.Run(new Frm_Login());
+            //Application.Run(new Frm_LogoReloj());
+            
         }
     }
 }

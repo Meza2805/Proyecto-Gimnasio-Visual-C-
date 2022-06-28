@@ -7,22 +7,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Capa_Negocio;
 
 namespace Ginmasio
 {
     public partial class Mensaje_Suscripcion : Form
     {
-        public Mensaje_Suscripcion(String membresia,DateTime f)
+        Membresia objeto = new Membresia();
+        public static string memb;
+        public Mensaje_Suscripcion()
         {
             InitializeComponent();
-            txtMembresia.Text = Convert.ToString(membresia);
-            fecha = f;
-            txtFecha.Text = f.ToShortDateString();          
+           
         }
-        public static DateTime fecha;
+
         private void button1_Click(object sender, EventArgs e)
         {
+            Frm_Suscripcion vtn_sus = Owner as Frm_Suscripcion;
+            vtn_sus.txtCedula.Clear();
+            vtn_sus.txtPrimerNombre.Clear();
+            vtn_sus.txtSegundoNombre.Clear();
+            vtn_sus.txtPrimerApellido.Clear();
+            vtn_sus.txtSegundoApellido.Clear();
+            vtn_sus.Cargar_registro_sus();
+            //vtn_sus.dgvClientes.Rows.Clear();
             this.Close();
         }
+       
+
+
     }
 }

@@ -78,17 +78,7 @@ namespace Ginmasio
                     break;
             }
 
-            //if (va == 1)
-            //{
-            //    this.Close();
-            //    Environment.Exit(0);//cierra toda la aplicacion
-            //}
-            //else
-            //{
-            //    this.Close();
-            //    inicio.Show();
-
-            //}
+           
         }
     }
 }

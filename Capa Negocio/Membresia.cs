@@ -16,7 +16,6 @@ namespace Capa_Negocio
         SqlDataAdapter Adaptador;
         SqlDataReader reader;
 
-
         public DataTable Cargar_Clientes(String nombre)
         {
             DataTable Clientes = new DataTable();
@@ -27,6 +26,7 @@ namespace Capa_Negocio
             comando.Connection = Conexion.conexion_datos;
             Adaptador = new SqlDataAdapter(comando);
             comando.Parameters.Add(new SqlParameter("@Nombre",System.Data.SqlDbType.VarChar)).Value = nombre;
+            comando.ExecuteNonQuery();
             Adaptador.Fill(Clientes);
             Conexion.conexion_datos.Close();
             return Clientes;
@@ -67,9 +67,9 @@ namespace Capa_Negocio
         public struct salida_sus
         {
             public int valor;
-            public DateTime fecha;
+            public string fecha;
         }
-        public salida_sus Registrar_Suscripcion(String cedula_cliente, String cedula_empleado,char id_membresia)
+        public void Registrar_Suscripcion(String cedula_cliente, String cedula_empleado,char id_membresia)
         {
             Conexion.conexion_datos.Open();
             salida_sus salida;
@@ -84,10 +84,59 @@ namespace Capa_Negocio
             comando.Connection = Conexion.conexion_datos;
             comando.ExecuteNonQuery();
             salida.valor = Convert.ToInt32(comando.Parameters["@salida"].Value);
-            salida.fecha = Convert.ToDateTime(comando.Parameters["@fecha_convertida"].Value);
+            salida.fecha = Convert.ToString(comando.Parameters["@fecha_convertida"].Value);
             Conexion.conexion_datos.Close();
-           
-            return salida;
+            //return salida;
+        }
+
+        public DataTable Buscar_Membresia_cliente(string cedula_cliente)
+        {
+
+            DataTable cliente = new DataTable();
+            Conexion.conexion_datos.Open();
+            comando = new SqlCommand();
+            comando.CommandText = "SP_Sus_Cliente";
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.Parameters.Add(new SqlParameter("@ID_Cliente",System.Data.SqlDbType.VarChar)).Value =cedula_cliente;
+            comando.Connection = Conexion.conexion_datos;
+            comando.ExecuteNonQuery();
+            Adaptador = new SqlDataAdapter(comando);
+            Adaptador.Fill(cliente);
+            Conexion.conexion_datos.Close();
+            return cliente;
+
+        }
+
+
+        public DataTable Mostrar_Precio_Membresia()
+        {
+            DataTable tabla = new DataTable();
+            Conexion.conexion_datos.Open();
+            comando = new SqlCommand();
+            comando.CommandText = "SP_Membresia_Precio";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Connection = Conexion.conexion_datos;
+            comando.ExecuteNonQuery();
+            Adaptador = new SqlDataAdapter(comando);
+            Adaptador.Fill(tabla);
+            Conexion.conexion_datos.Close();
+            return tabla;
+        }
+
+
+        public DataTable Mostrar_susc ()
+        {
+            DataTable tabla = new DataTable();
+            Conexion.conexion_datos.Open();
+            comando = new SqlCommand();
+            comando.CommandText = "SP_Registro_Membresias";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Connection = Conexion.conexion_datos;
+            comando.ExecuteNonQuery();
+            Adaptador = new SqlDataAdapter(comando);
+            Adaptador.Fill(tabla);
+            Conexion.conexion_datos.Close();
+            return tabla;
         }
 
     }
